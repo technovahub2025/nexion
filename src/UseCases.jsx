@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./app.css";
+import "./App.css";
 import preview1 from "./assets/usecase-inbound.jpeg";
 import preview2 from "./assets/usecase-outbound.jpeg";
 import preview3 from "./assets/usecase-ivr.jpeg";
