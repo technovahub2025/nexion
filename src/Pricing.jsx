@@ -1,6 +1,15 @@
 import "./App.css";
 
 export const Pricing = () => {
+  const salesWhatsAppLink =
+    "https://wa.me/918682057193?text=Hi%20Nexion%20team,%20I%20want%20to%20know%20more%20about%20the%20Enterprise%20plan.";
+  const handleStartTrialClick = () => {
+    const contactSection = document.getElementById("contact");
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
   return (
     <section className="pricing-section" id="pricing">
       <div className="pricing-container">
@@ -10,11 +19,10 @@ export const Pricing = () => {
         </p>
 
         <div className="pricing-grid">
-          {/* STARTER */}
           <div className="pricing-card">
             <h3>Starter</h3>
             <p className="price">
-              ₹2,999<span>/month</span>
+              INR 2,999<span>/month</span>
             </p>
 
             <ul>
@@ -27,39 +35,45 @@ export const Pricing = () => {
             <button className="btn-outline">Get Started</button>
           </div>
 
-          {/* GROWTH */}
           <div className="pricing-card featured">
             <span className="badge">Most Popular</span>
             <h3>Growth</h3>
             <p className="price">
-              ₹7,999<span>/month</span>
+              INR 4,999<span>/month</span>
             </p>
 
             <ul>
-              <li>Inbound & outbound automation</li>
+              <li>Inbound and outbound automation</li>
               <li>AI voice bot conversations</li>
               <li>Voice broadcasts</li>
               <li>Advanced analytics</li>
               <li>Up to 5,000 voice minutes</li>
             </ul>
 
-            <button className="btn-primary">Start Free Trial</button>
+            <button type="button" className="btn-primary" onClick={handleStartTrialClick}>
+              Start Free Trial
+            </button>
           </div>
 
-          {/* ENTERPRISE */}
           <div className="pricing-card">
             <h3>Enterprise</h3>
             <p className="price custom">Custom</p>
 
             <ul>
               <li>Unlimited call automation</li>
-              <li>Custom AI voice & flows</li>
+              <li>Custom AI voice and flows</li>
               <li>Dedicated infrastructure</li>
-              <li>CRM & API integrations</li>
-              <li>Priority support & SLA</li>
+              <li>CRM and API integrations</li>
+              <li>Priority support and SLA</li>
             </ul>
 
-            <button className="btn-outline">Contact Sales</button>
+            <button
+              type="button"
+              className="btn-outline"
+              onClick={() => window.open(salesWhatsAppLink, "_blank", "noopener,noreferrer")}
+            >
+              Contact Sales
+            </button>
           </div>
         </div>
       </div>

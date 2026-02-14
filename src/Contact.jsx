@@ -4,7 +4,6 @@ export const Contact = () => {
   return (
     <section className="contact-section" id="contact">
       <div className="contact-container">
-        {/* LEFT */}
         <div className="contact-left">
           <h2>Talk to the Nexion Team</h2>
           <p>
@@ -32,9 +31,9 @@ export const Contact = () => {
               rel="noopener noreferrer"
               className="contact-btn primary"
             >
-              🌐 TechnovaHub
+              TechnovaHub
             </a>
-            
+
             <span>Address</span>
             <a
               href="https://maps.google.com/?q=Technova Hub"
@@ -42,23 +41,18 @@ export const Contact = () => {
               rel="noopener noreferrer"
               className="contact-btn secondary"
             >
-              📍 Location       
+              Location
             </a>
           </div>
-
         </div>
 
-        {/* RIGHT */}
         <form className="contact-form">
           <input type="text" placeholder="Full Name" required />
           <input type="email" placeholder="Work Email" required />
           <input type="text" placeholder="Company Name" />
           <input type="tel" placeholder="Phone Number" />
 
-          <textarea
-            placeholder="Tell us about your requirement"
-            rows="4"
-          ></textarea>
+          <textarea placeholder="Tell us about your requirement" rows="4"></textarea>
 
           <button type="submit">Request a Demo</button>
         </form>

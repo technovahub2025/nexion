@@ -1,8 +1,8 @@
-import { useState } from 'react'
-import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css'
 import { Navbar } from './Navbar.jsx';
 import { Hero } from './Hero.jsx';
+import { BrandStrip } from './BrandStrip.jsx';
 import { WhyWhatsApp } from './WhyWhatsApp.jsx';
 import { Features } from './Features.jsx';
 import { UseCases } from './UseCases.jsx';
@@ -11,11 +11,9 @@ import { ScrollToTop } from './ScrollToTop.jsx';
 import { FloatingCTA } from './FloatingCTA.jsx';
 import { Contact } from './Contact.jsx';
 import { Products } from './Products.jsx';
-
+import { Testimonials } from './Testimonials.jsx';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
       <Navbar />
@@ -28,14 +26,15 @@ function App() {
         <WhyWhatsApp />
       </div>
       <UseCases />
+      <BrandStrip />
       <Pricing />
+      <Testimonials />
       <ScrollToTop />
       <FloatingCTA />
       <Contact />
       <footer className="footer">
-        Â© 2026 <span>TechnovaHub</span>. All Rights Reserved.
+        © 2026 <span>TechnovaHub</span>. All Rights Reserved.
       </footer>
-
     </>
   )
 }

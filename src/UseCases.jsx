@@ -11,11 +11,7 @@ const USE_CASES = [
     title: "Inbound Call Automation",
     description:
       "AI answers incoming calls instantly, routes customers using IVR or voice input, and resolves common queries without agent intervention.",
-    points: [
-      "24×7 AI call answering",
-      "Smart IVR & voice routing",
-      "Automatic agent escalation",
-    ],
+    points: ["24x7 AI call answering", "Smart IVR and voice routing", "Automatic agent escalation"],
     image: preview1,
   },
   {
@@ -23,11 +19,7 @@ const USE_CASES = [
     title: "Outbound Voice Campaigns",
     description:
       "Launch bulk automated voice calls with one click. Perfect for reminders, alerts, promotions, and announcements.",
-    points: [
-      "Bulk voice broadcasts",
-      "Custom AI voices",
-      "Live delivery tracking",
-    ],
+    points: ["Bulk voice broadcasts", "Custom AI voices", "Live delivery tracking"],
     image: preview2,
   },
   {
@@ -35,28 +27,18 @@ const USE_CASES = [
     title: "AI Voice Bot Conversations",
     description:
       "Replace rigid menus with natural voice conversations. Customers speak freely and AI responds intelligently.",
-    points: [
-      "Speech-based input",
-      "Intent detection",
-      "Dynamic AI responses",
-    ],
+    points: ["Speech-based input", "Intent detection", "Dynamic AI responses"],
     image: preview3,
   },
   {
     id: 4,
-    title: "Call Analytics & Insights",
+    title: "Call Analytics and Insights",
     description:
       "Track every call in real time. Measure engagement, success rates, and call duration from a single dashboard.",
-    points: [
-      "Real-time analytics",
-      "IVR routing breakdown",
-      "Performance insights",
-    ],
+    points: ["Real-time analytics", "IVR routing breakdown", "Performance insights"],
     image: preview4,
   },
 ];
-
-
 
 export const UseCases = () => {
   const [active, setActive] = useState(USE_CASES[0]);
@@ -65,7 +47,6 @@ export const UseCases = () => {
   return (
     <section className="usecases-section" id="usecases">
       <div className="usecases-container">
-        {/* LEFT */}
         <div className="usecases-left">
           <h2>Voice Automation in Action</h2>
           <p className="subtitle">
@@ -77,8 +58,7 @@ export const UseCases = () => {
             {USE_CASES.map((item) => (
               <div
                 key={item.id}
-                className={`usecase-item ${active.id === item.id ? "active" : ""
-                  }`}
+                className={`usecase-item ${active.id === item.id ? "active" : ""}`}
                 onClick={() => setActive(item)}
               >
                 <h4>{item.title}</h4>
@@ -94,22 +74,22 @@ export const UseCases = () => {
           </div>
         </div>
 
-        {/* RIGHT */}
         <div className="usecases-right">
           <div className="preview-frame">
             <img
               src={active.image}
               alt={active.title}
               onClick={() => setZoomImage(active.image)}
-              className="preview-image"/>
+              className="preview-image"
+            />
           </div>
         </div>
+
         {zoomImage && (
           <div className="image-modal" onClick={() => setZoomImage(null)}>
             <img src={zoomImage} alt="Preview zoom" />
           </div>
         )}
-
       </div>
     </section>
   );
