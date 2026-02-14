@@ -1,37 +1,46 @@
 import "./App.css";
+import mrfLogo from "./assets/brand/mrf.png";
+import tvsLogo from "./assets/brand/tvs.png";
+import eatonLogo from "./assets/brand/eaton.jpg";
+import raneLogo from "./assets/brand/rane.png";
+import sgLogo from "./assets/brand/sg.jpg";
+import polcLogo from "./assets/brand/polc.png";
+import mgmLogo from "./assets/brand/mgm.png";
+import solaraLogo from "./assets/brand/solara.png";
+import metaLogo from "./assets/brand/meta_PNG4.png";
 
 const BRANDS = [
   {
     alt: "PTS Shopping",
-    src: "src/assets/brand/mrf.png",
+    src: mrfLogo,
   },
   {
     alt: "CLEANSO",
-    src: "src/assets/brand/tvs.png",
+    src: tvsLogo,
   },
   {
     alt: "TECH VASEEGRAH",
-    src: "src/assets/brand/eaton.jpg",
+    src: eatonLogo,
   },
   {
     alt: "NEXION COMMERCE",
-    src: "src/assets/brand/rane.png",
+    src: raneLogo,
   },
   {
     alt: "VOICEFLOW LABS",
-    src: "src/assets/brand/sg.jpg",
+    src: sgLogo,
   },
   {
     alt: "GREENLINE RETAIL",
-    src: "src/assets/brand/polc.png",
+    src: polcLogo,
   },
   {
     alt: "GREENLINE RETAIL",
-    src: "src/assets/brand/mgm.png",
+    src: mgmLogo,
   },
   {
     alt: "GREENLINE RETAIL",
-    src: "src/assets/brand/solara.png",
+    src: solaraLogo,
   },
 ];
 
@@ -46,7 +55,7 @@ export const BrandStrip = () => {
         <div className="brand-proof-row mb-5">
           <div className="meta-proof">
             <div className="meta-proof-icon">
-              <img src="src/assets/brand/meta_PNG4.png" alt="Meta" height="45" width="55"/>
+              <img src={metaLogo} alt="Meta" height="45" width="55" />
             </div>
             <div>
               <strong>Meta</strong>
