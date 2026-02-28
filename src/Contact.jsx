@@ -14,7 +14,7 @@ export const Contact = () => {
           <div className="contact-info">
             <div>
               <span>Email</span>
-              <p>support@nexion.com</p>
+              <p>technovahubcareer@gmail.com</p>
             </div>
 
             <div>
