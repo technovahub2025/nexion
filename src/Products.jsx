@@ -1,8 +1,8 @@
 import { useState } from "react";
 import "./App.css";
-import productVoice from "./assets/voice.png";
-import productBroadcast from "./assets/broadcast.png";
-import productAnalytics from "./assets/analytics.png";
+import productVoice from "./assets/voiceauto.png";
+import productBroadcast from "./assets/broadcast2.png";
+import productAnalytics from "./assets/usecase-analytics-2.png";
 
 const PRODUCTS = [
     {
@@ -48,6 +48,7 @@ const PRODUCTS = [
 
 export const Products = () => {
     const [active, setActive] = useState(PRODUCTS[0]);
+    const [zoomImage, setZoomImage] = useState(null);
 
     return (
         <section className="products-section" id="products">
@@ -77,7 +78,12 @@ export const Products = () => {
                 {/* RIGHT CONTENT */}
                 <div className="products-content">
                     <div className="product-preview">
-                        <img src={active.image} alt={active.title} />
+                        <img
+                            src={active.image}
+                            alt={active.title}
+                            className="preview-image"
+                            onClick={() => setZoomImage(active.image)}
+                        />
                     </div>
 
                     <div className="product-details">
@@ -95,6 +101,12 @@ export const Products = () => {
                         </div>
                     </div>
                 </div>
+
+                {zoomImage && (
+                    <div className="image-modal" onClick={() => setZoomImage(null)}>
+                        <img src={zoomImage} alt="Preview zoom" />
+                    </div>
+                )}
             </div>
         </section>
     );
