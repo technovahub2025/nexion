@@ -6,6 +6,10 @@ export const Hero = () => {
     <section className="hero-section">
       <div className="hero-container">
         <div className="hero-badge">Official WhatsApp API + AI Automation</div>
+        <p className="hero-note">
+          24/7 AI-powered automation available to engage, respond, and support
+          your customers instantly.
+        </p>
 
         <h1 className="hero-title">
           Grow revenue faster with <span>WhatsApp-first</span> customer engagement
