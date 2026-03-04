@@ -1,4 +1,4 @@
-﻿import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./App.css";
 import logo from "./assets/logo(2).jpeg";
 
@@ -30,6 +30,7 @@ export const Navbar = () => {
           <a href="#features">Features</a>
           <a href="#products">Products</a>
           <a href="#usecases">Use Cases</a>
+          <a href="#stories">Services</a>
           <a href="#pricing">Pricing</a>
           <a href="#contact">Contact</a>
         </nav>

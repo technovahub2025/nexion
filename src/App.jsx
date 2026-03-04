@@ -12,6 +12,7 @@ import { FloatingCTA } from "./FloatingCTA.jsx";
 import { Contact } from "./Contact.jsx";
 import { Products } from "./Products.jsx";
 import { Testimonials } from "./Testimonials.jsx";
+import { SuccessStories } from "./SuccessStories.jsx";
 import { FAQ } from "./FAQ.jsx";
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
       <UseCases />
       <BrandStrip />
       <Pricing />
+      <SuccessStories />
       <Testimonials />
       <FAQ />
       <ScrollToTop />
