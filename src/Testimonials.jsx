@@ -1,4 +1,7 @@
 import "./App.css";
+import fallbackAvatar from "./assets/logo(2).jpeg";
+
+const baseUrl = import.meta.env.BASE_URL;
 
 const TESTIMONIALS = [
   {
@@ -8,7 +11,7 @@ const TESTIMONIALS = [
     highlight: "reliability",
     name: "Dan M.",
     company: "TechSolutions",
-    image: "/testimonials/person-1.jpg",
+    image: `${baseUrl}testimonials/person-1.jpg`,
   },
   {
     id: 2,
@@ -17,7 +20,7 @@ const TESTIMONIALS = [
     highlight: "affordable alternative to official WhatsApp Business API",
     name: "Ranjid E.",
     company: "GlobalConnect",
-    image: "/testimonials/person-2.jpg",
+    image: `${baseUrl}testimonials/person-2.jpg`,
   },
   {
     id: 3,
@@ -26,7 +29,7 @@ const TESTIMONIALS = [
     highlight: "Great tool to send marketing campaigns over WhatsApp",
     name: "Sarah W.",
     company: "DevSync",
-    image: "/testimonials/person-3.jpg",
+    image: `${baseUrl}testimonials/person-3.jpg`,
   },
   {
     id: 4,
@@ -35,7 +38,7 @@ const TESTIMONIALS = [
     highlight: "integration was seamless",
     name: "Leon T.",
     company: "BrightApps",
-    image: "/testimonials/person-4.jpg",
+    image: `${baseUrl}testimonials/person-4.jpg`,
   },
   {
     id: 5,
@@ -44,7 +47,7 @@ const TESTIMONIALS = [
     highlight: "Customer support is exceptional",
     name: "Aisha K.",
     company: "SnapTech",
-    image: "/testimonials/person-5.jpg",
+    image: `${baseUrl}testimonials/person-5.jpg`,
   },
   {
     id: 6,
@@ -53,7 +56,7 @@ const TESTIMONIALS = [
     highlight: "analytics dashboard",
     name: "James L.",
     company: "AppVibe",
-    image: "/testimonials/person-6.jpg",
+    image: `${baseUrl}testimonials/person-6.jpg`,
   },
 ];
 
@@ -94,7 +97,14 @@ export const Testimonials = () => {
               </p>
 
               <div className="testimonial-author">
-                <img src={item.image} alt={item.name} />
+                <img
+                  src={item.image}
+                  alt={item.name}
+                  onError={(event) => {
+                    event.currentTarget.onerror = null;
+                    event.currentTarget.src = fallbackAvatar;
+                  }}
+                />
                 <div>
                   <strong>{item.name}</strong>
                   <p>{item.company}</p>
