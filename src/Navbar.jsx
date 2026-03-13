@@ -1,15 +1,10 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
-import logo from "./assets/logo(2).jpeg";
+import logo from "./assets/logo(new).png";
 
 export const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [isDark, setIsDark] = useState(() => {
-    const saved = localStorage.getItem("theme");
-    if (saved === "dark") return true;
-    if (saved === "light") return false;
-    return window.matchMedia("(prefers-color-scheme: dark)").matches;
-  });
+  const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {
     document.body.classList.toggle("theme-dark", isDark);

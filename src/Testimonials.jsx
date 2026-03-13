@@ -1,7 +1,11 @@
 import "./App.css";
-import fallbackAvatar from "./assets/logo(2).jpeg";
-
-const baseUrl = import.meta.env.BASE_URL;
+import fallbackAvatar from "./assets/logo.png";
+import person1 from "./assets/testimonials/person-1.jpg";
+import person2 from "./assets/testimonials/person-2.jpg";
+import person3 from "./assets/testimonials/person-3.jpg";
+import person4 from "./assets/testimonials/person-4.jpg";
+import person5 from "./assets/testimonials/person-5.jpg";
+import person6 from "./assets/testimonials/person-6.jpg";
 
 const TESTIMONIALS = [
   {
@@ -11,7 +15,7 @@ const TESTIMONIALS = [
     highlight: "reliability",
     name: "Dan M.",
     company: "TechSolutions",
-    image: `${baseUrl}testimonials/person-1.jpg`,
+    image: person1,
   },
   {
     id: 2,
@@ -20,7 +24,7 @@ const TESTIMONIALS = [
     highlight: "affordable alternative to official WhatsApp Business API",
     name: "Ranjid E.",
     company: "GlobalConnect",
-    image: `${baseUrl}testimonials/person-2.jpg`,
+    image: person2,
   },
   {
     id: 3,
@@ -29,7 +33,7 @@ const TESTIMONIALS = [
     highlight: "Great tool to send marketing campaigns over WhatsApp",
     name: "Sarah W.",
     company: "DevSync",
-    image: `${baseUrl}testimonials/person-3.jpg`,
+    image: person3,
   },
   {
     id: 4,
@@ -38,7 +42,7 @@ const TESTIMONIALS = [
     highlight: "integration was seamless",
     name: "Leon T.",
     company: "BrightApps",
-    image: `${baseUrl}testimonials/person-4.jpg`,
+    image: person4,
   },
   {
     id: 5,
@@ -47,7 +51,7 @@ const TESTIMONIALS = [
     highlight: "Customer support is exceptional",
     name: "Aisha K.",
     company: "SnapTech",
-    image: `${baseUrl}testimonials/person-5.jpg`,
+    image: person5,
   },
   {
     id: 6,
@@ -56,7 +60,7 @@ const TESTIMONIALS = [
     highlight: "analytics dashboard",
     name: "James L.",
     company: "AppVibe",
-    image: `${baseUrl}testimonials/person-6.jpg`,
+    image: person6,
   },
 ];
 
