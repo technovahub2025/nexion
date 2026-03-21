@@ -1,7 +1,20 @@
 import React from "react";
 import "./App.css";
+import { openPricingSection } from "./pricingNavigation";
 
 export const Hero = () => {
+  const openFeaturesSection = () => {
+    const featuresSection = document.getElementById("features");
+    if (featuresSection) {
+      featuresSection.scrollIntoView({ behavior: "smooth", block: "start" });
+      return;
+    }
+
+    if (window.location.hash !== "#features") {
+      window.location.hash = "#features";
+    }
+  };
+
   return (
     <section className="hero-section">
       <div className="hero-container">
@@ -21,8 +34,12 @@ export const Hero = () => {
         </p>
 
         <div className="hero-actions">
-          <button className="hero-cta-primary">Get a Demo</button>
-          <a className="hero-cta-secondary" href="#features">See Features</a>
+          <button className="hero-cta-primary" type="button" onClick={openPricingSection}>
+            Get a Demo
+          </button>
+          <button className="hero-cta-secondary" type="button" onClick={openFeaturesSection}>
+            See Features
+          </button>
         </div>
       </div>
     </section>

@@ -3,6 +3,7 @@ import "./App.css";
 import productVoice from "./assets/voiceauto.png";
 import productBroadcast from "./assets/broadcast2.png";
 import productAnalytics from "./assets/usecase-analytics-2.png";
+import { openPricingSection } from "./pricingNavigation";
 
 const PRODUCTS = [
     {
@@ -97,7 +98,7 @@ export const Products = () => {
                         </ul>
 
                         <div className="product-actions">
-                            <a className="hero-cta-primary" href="#contact">Get a Demo</a>
+                            <button type="button" className="hero-cta-primary" onClick={openPricingSection}>Get a Demo</button>
                         </div>
                     </div>
                 </div>

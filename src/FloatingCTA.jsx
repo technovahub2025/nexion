@@ -1,10 +1,12 @@
 import "./App.css";
+import { openPricingSection } from "./pricingNavigation";
 
-export const FloatingCTA = () => {
+export const FloatingCTA = ({ visible = true }) => {
   const handleRegister = () => {
-    // change this to your actual register / signup route
-    window.location.href = "#register";
+    openPricingSection();
   };
+
+  if (!visible) return null;
 
   return (
     <button
