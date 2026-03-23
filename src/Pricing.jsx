@@ -151,7 +151,7 @@ export const Pricing = () => {
   const [checkoutLoading, setCheckoutLoading] = useState("");
 
   const salesWhatsAppLink =
-    "https://wa.me/918682057193?text=Hi%20Nexion%20team,%20I%20want%20to%20know%20more%20about%20the%20Enterprise%20plan.";
+    "https://wa.me/919003530230?text=Hi%20Nexion%20team,%20I%20want%20to%20know%20more%20about%20the%20Enterprise%20plan.";
   const brandLogoUrl =
     import.meta.env.VITE_BRAND_LOGO_URL ||
     "https://technovahub.in/nexion/landingpage/assets/logo(new)-U0PXgXDz.png";
