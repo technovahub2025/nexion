@@ -90,6 +90,15 @@ const syncAuthFromParent = async () => {
   };
 };
 
+const FEATURE_LABEL_ALIASES = {
+  Inbound: "Inbound Calls / IVR",
+  Outbound: "Outbound Voice",
+  Missed: "Missed Call",
+  Email: "Email Automation"
+};
+
+const normalizePlanFeatureLabel = (label) => FEATURE_LABEL_ALIASES[String(label || "").trim()] || String(label || "").trim();
+
 const planCatalog = {
   monthly: [
     {
@@ -97,7 +106,7 @@ const planCatalog = {
       name: "Basic",
       price: "₹3,999",
       note: "per month",
-      features: ["Missed call automation", "Team inbox", "WhatsApp broadcast", "Voice broadcast"],
+      features: ["Broadcast Dashboard", "Team Inbox", "Broadcast", "Templates", "Contacts", "Voice Broadcast", "Missed Call"],
       cta: "Upgrade to Basic"
     },
     {
@@ -105,7 +114,7 @@ const planCatalog = {
       name: "Growth",
       price: "₹6,999",
       note: "per month",
-      features: ["Basic plan features", "Inbound workflows", "IVR and automation", "Analytics and advanced tools"],
+      features: ["Ads Manager", "Insights", "Connect Meta", "Broadcast Dashboard", "Team Inbox", "Broadcast", "Templates", "Contacts", "Voice Broadcast", "Inbound Calls / IVR", "Call Analytics", "Missed Call", "Email Automation"],
       cta: "Upgrade to Growth"
     },
     {
@@ -113,7 +122,7 @@ const planCatalog = {
       name: "Enterprise",
       price: "Custom",
       note: "contact sales",
-      features: ["Growth plan features", "Outbound voice", "Full platform access", "Priority support"],
+      features: ["Ads Manager", "Insights", "Connect Meta", "Broadcast Dashboard", "Team Inbox", "Broadcast", "Templates", "Contacts", "Voice Broadcast", "Inbound Calls / IVR", "Outbound Voice", "Call Analytics", "Missed Call", "Email Automation"],
       cta: "Contact Sales"
     }
   ],
@@ -123,7 +132,7 @@ const planCatalog = {
       name: "Basic",
       price: "₹47,988",
       note: "per year",
-      features: ["Missed call automation", "Team inbox", "WhatsApp broadcast", "Voice broadcast"],
+      features: ["Broadcast Dashboard", "Team Inbox", "Broadcast", "Templates", "Contacts", "Voice Broadcast", "Missed Call"],
       cta: "Upgrade to Basic"
     },
     {
@@ -131,7 +140,7 @@ const planCatalog = {
       name: "Growth",
       price: "₹83,988",
       note: "per year",
-      features: ["Basic plan features", "Inbound workflows", "IVR and automation", "Analytics and advanced tools"],
+      features: ["Ads Manager", "Insights", "Connect Meta", "Broadcast Dashboard", "Team Inbox", "Broadcast", "Templates", "Contacts", "Voice Broadcast", "Inbound Calls / IVR", "Call Analytics", "Missed Call", "Email Automation"],
       cta: "Upgrade to Growth"
     },
     {
@@ -139,7 +148,7 @@ const planCatalog = {
       name: "Enterprise",
       price: "Custom",
       note: "contact sales",
-      features: ["Growth plan features", "Outbound voice", "Full platform access", "Priority support"],
+      features: ["Ads Manager", "Insights", "Connect Meta", "Broadcast Dashboard", "Team Inbox", "Broadcast", "Templates", "Contacts", "Voice Broadcast", "Inbound Calls / IVR", "Outbound Voice", "Call Analytics", "Missed Call", "Email Automation"],
       cta: "Contact Sales"
     }
   ]
@@ -182,6 +191,21 @@ export const Pricing = () => {
     });
   }, [billingCycle, pricingOverrides]);
 
+  const displayPlans = useMemo(
+    () =>
+      plans.map((plan) => {
+        const override = pricingOverrides?.find((item) => item.planCode === plan.code);
+        return {
+          ...plan,
+          features:
+            Array.isArray(override?.features) && override.features.length > 0
+              ? override.features
+              : plan.features
+        };
+      }),
+    [plans, pricingOverrides]
+  );
+
   useEffect(() => {
     if (!API_URL) return;
     const fetchPricing = async () => {
@@ -194,7 +218,8 @@ export const Pricing = () => {
           items.map((item) => ({
             planCode: String(item.planCode || "").toLowerCase(),
             monthlyPrice: Number(item.monthlyPrice || 0),
-            yearlyPrice: Number(item.yearlyPrice || 0)
+            yearlyPrice: Number(item.yearlyPrice || 0),
+            features: Array.isArray(item.features) ? item.features.map((feature) => normalizePlanFeatureLabel(feature)) : []
           }))
         );
       } catch (err) {
@@ -422,7 +447,7 @@ export const Pricing = () => {
         </div>
 
         <div className="pricing-grid">
-          {plans.map((plan) => (
+          {displayPlans.map((plan) => (
             <div
               className={`pricing-card ${plan.code === "growth" ? "featured" : ""}`}
               key={`${billingCycle}-${plan.code}`}
