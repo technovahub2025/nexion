@@ -1118,8 +1118,14 @@ select {
     flex: 1;
     max-height: 260px;
     overflow: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
     padding-right: 4px;
   }
+
+.pricing-card ul::-webkit-scrollbar {
+  display: none;
+}
   
 .pricing-card li {
     position: relative;
