@@ -113,3 +113,4 @@ export const Navbar = ({ isEmbedded = false, currentUser = null }) => {
     </header>
   );
 };
+

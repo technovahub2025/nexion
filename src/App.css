@@ -69,26 +69,30 @@ select {
 .navbar-left {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 14px;
+  min-width: 0;
 }
 
 .logo-icon {
-  width: 51px;
-  height: 51px;
+  width: 54px;
+  height: 54px;
+  object-fit: cover;
   border-radius: 50%;
-  /* object-fit: cover; */
-  border: 2px solid #dbeafe;
+  border: 2px solid #bfdbfe;
+  background: #ffffff;
+  display: block;
 }
 
 .logo-text {
-  font-size: 24px;
-  font-weight: 800;
-  letter-spacing: -0.02em;
+  font-size: 30px;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  line-height: 1;
   color: #111827;
 }
 
 .logo-text span {
-  color: var(--accent-strong);
+  color: #1d4ed8;
 }
 
 .navbar-actions {
@@ -1510,6 +1514,10 @@ body.theme-dark .btn-login {
   color: #dce8f7;
 }
 
+body.theme-dark .logo-icon {
+  border-color: #3b4f6d;
+}
+
 body.theme-dark .navbar-user-pill {
   background: #121d30;
   border-color: #27354b;
@@ -1722,6 +1730,15 @@ body.theme-dark .testimonial-author p {
     display: none;
   }
 
+  .logo-icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .logo-text {
+    font-size: 24px;
+  }
+
   .navbar-links {
     position: absolute;
     top: 72px;
@@ -1784,6 +1801,15 @@ body.theme-dark .testimonial-author p {
 }
 
 @media (max-width: 640px) {
+  .logo-icon {
+    width: 42px;
+    height: 42px;
+  }
+
+  .logo-text {
+    font-size: 18px;
+  }
+
   .brand-strip-title {
     font-size: 30px;
   }
