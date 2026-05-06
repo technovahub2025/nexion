@@ -99,6 +99,18 @@ const FEATURE_LABEL_ALIASES = {
 
 const normalizePlanFeatureLabel = (label) => FEATURE_LABEL_ALIASES[String(label || "").trim()] || String(label || "").trim();
 
+const CRM_FEATURES = [
+  "CRM Home",
+  "Pipeline",
+  "Tasks",
+  "Deals",
+  "Meetings",
+  "Reports",
+  "Follow-up Ops",
+  "Lead Scoring Settings",
+  "Task Calendar"
+];
+
 const planCatalog = {
   monthly: [
     {
@@ -106,7 +118,7 @@ const planCatalog = {
       name: "Basic",
       price: "₹3,999",
       note: "per month",
-      features: ["Broadcast Dashboard", "Team Inbox", "Broadcast", "Templates", "Contacts", "Voice Broadcast", "Missed Call"],
+      features: ["Broadcast Dashboard", "Team Inbox", "Broadcast", "Templates", "Contacts", ...CRM_FEATURES, "Voice Broadcast", "Missed Call"],
       cta: "Upgrade to Basic"
     },
     {
@@ -114,7 +126,7 @@ const planCatalog = {
       name: "Growth",
       price: "₹6,999",
       note: "per month",
-      features: ["Ads Manager", "Insights", "Connect Meta", "Broadcast Dashboard", "Team Inbox", "Broadcast", "Templates", "Contacts", "Voice Broadcast", "Inbound Calls / IVR", "Call Analytics", "Missed Call", "Email Automation"],
+      features: ["Ads Manager", "Insights", "Connect Meta", "Broadcast Dashboard", "Team Inbox", "Broadcast", "Templates", "Contacts", ...CRM_FEATURES, "Voice Broadcast", "Inbound Calls / IVR", "Call Analytics", "Missed Call", "Email Automation"],
       cta: "Upgrade to Growth"
     },
     {
@@ -122,7 +134,7 @@ const planCatalog = {
       name: "Enterprise",
       price: "Custom",
       note: "contact sales",
-      features: ["Ads Manager", "Insights", "Connect Meta", "Broadcast Dashboard", "Team Inbox", "Broadcast", "Templates", "Contacts", "Voice Broadcast", "Inbound Calls / IVR", "Outbound Voice", "Call Analytics", "Missed Call", "Email Automation"],
+      features: ["Ads Manager", "Insights", "Connect Meta", "Broadcast Dashboard", "Team Inbox", "Broadcast", "Templates", "Contacts", ...CRM_FEATURES, "Voice Broadcast", "Inbound Calls / IVR", "Outbound Voice", "Call Analytics", "Missed Call", "Email Automation"],
       cta: "Contact Sales"
     }
   ],
@@ -132,7 +144,7 @@ const planCatalog = {
       name: "Basic",
       price: "₹47,988",
       note: "per year",
-      features: ["Broadcast Dashboard", "Team Inbox", "Broadcast", "Templates", "Contacts", "Voice Broadcast", "Missed Call"],
+      features: ["Broadcast Dashboard", "Team Inbox", "Broadcast", "Templates", "Contacts", ...CRM_FEATURES, "Voice Broadcast", "Missed Call"],
       cta: "Upgrade to Basic"
     },
     {
@@ -140,7 +152,7 @@ const planCatalog = {
       name: "Growth",
       price: "₹83,988",
       note: "per year",
-      features: ["Ads Manager", "Insights", "Connect Meta", "Broadcast Dashboard", "Team Inbox", "Broadcast", "Templates", "Contacts", "Voice Broadcast", "Inbound Calls / IVR", "Call Analytics", "Missed Call", "Email Automation"],
+      features: ["Ads Manager", "Insights", "Connect Meta", "Broadcast Dashboard", "Team Inbox", "Broadcast", "Templates", "Contacts", ...CRM_FEATURES, "Voice Broadcast", "Inbound Calls / IVR", "Call Analytics", "Missed Call", "Email Automation"],
       cta: "Upgrade to Growth"
     },
     {
@@ -148,7 +160,7 @@ const planCatalog = {
       name: "Enterprise",
       price: "Custom",
       note: "contact sales",
-      features: ["Ads Manager", "Insights", "Connect Meta", "Broadcast Dashboard", "Team Inbox", "Broadcast", "Templates", "Contacts", "Voice Broadcast", "Inbound Calls / IVR", "Outbound Voice", "Call Analytics", "Missed Call", "Email Automation"],
+      features: ["Ads Manager", "Insights", "Connect Meta", "Broadcast Dashboard", "Team Inbox", "Broadcast", "Templates", "Contacts", ...CRM_FEATURES, "Voice Broadcast", "Inbound Calls / IVR", "Outbound Voice", "Call Analytics", "Missed Call", "Email Automation"],
       cta: "Contact Sales"
     }
   ]
