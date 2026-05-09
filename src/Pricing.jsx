@@ -111,6 +111,17 @@ const CRM_FEATURES = [
   "Task Calendar"
 ];
 
+const OPENING_OFFER_MODULES = [
+  { label: "Meta Ads", icon: "ti ti-brand-meta", tone: "teal" },
+  { label: "WhatsApp Broadcast", icon: "ti ti-brand-whatsapp", tone: "sky" },
+  { label: "Lead Score / CRM Task", icon: "ti ti-users", tone: "violet" },
+  { label: "Missed Calls", icon: "ti ti-phone-off", tone: "rose" },
+  { label: "WhatsApp Chatbot", icon: "ti ti-brand-whatsapp", tone: "blue" },
+  { label: "IVR / Inbound", icon: "ti ti-phone-incoming", tone: "amber" },
+  { label: "Outbound Calls", icon: "ti ti-outbound", tone: "sky" },
+  { label: "Bulk Email Automation", icon: "ti ti-mail", tone: "blue" }
+];
+
 const planCatalog = {
   monthly: [
     {
@@ -173,6 +184,8 @@ export const Pricing = () => {
 
   const salesWhatsAppLink =
     "https://wa.me/919003530230?text=Hi%20Nexion%20team,%20I%20want%20to%20know%20more%20about%20the%20Enterprise%20plan.";
+  const openingOfferWhatsAppLink =
+    "https://wa.me/919003530230?text=Hi%20Nexion%20team,%20I%20want%20to%20claim%20the%20Opening%20Offer%20today%20only%20all%20services%20for%204999.";
   const brandLogoUrl =
     import.meta.env.VITE_BRAND_LOGO_URL ||
     "https://technovahub.in/nexion/landingpage/assets/logo(new)-U0PXgXDz.png";
@@ -240,6 +253,10 @@ export const Pricing = () => {
     };
     fetchPricing();
   }, [API_URL]);
+
+  const handleOpeningOffer = () => {
+    window.open(openingOfferWhatsAppLink, "_blank", "noopener,noreferrer");
+  };
 
   const handleUpgrade = async (planCode) => {
     if (planCode === "enterprise") {
@@ -457,6 +474,61 @@ export const Pricing = () => {
             <span className="pricing-save-badge">Save 15%</span>
           </button>
         </div>
+
+        {billingCycle === "monthly" && (
+          <div className="pricing-promo-card">
+          <div className="pricing-promo-topbar">
+            <span className="pricing-promo-badge">Opening Offer</span>
+            <span className="pricing-promo-toptext">Limited time launch deal</span>
+          </div>
+
+          <div className="pricing-promo-body">
+            <div className="pricing-promo-left">
+              <p className="pricing-promo-kicker">Full Access</p>
+              <div className="pricing-promo-price">
+                <span className="pricing-promo-currency">₹</span>
+                <span className="pricing-promo-amount">4,999</span>
+                <span className="pricing-promo-period">/mo</span>
+              </div>
+              <p className="pricing-promo-copy">
+                Everything you need in one powerful bundle. Priority setup and faster onboarding included.
+              </p>
+              <div className="pricing-promo-chip">
+                <span className="pricing-promo-chip-dot" />
+                All modules included
+              </div>
+            </div>
+
+            <div className="pricing-promo-right">
+              <p className="pricing-promo-righttitle">Included Modules</p>
+              <div className="pricing-promo-grid">
+                {OPENING_OFFER_MODULES.map((feature) => (
+                  <div
+                    className={`pricing-promo-item ${feature.span ? "span-2" : ""}`}
+                    key={feature.label}
+                  >
+                    <span className={`pricing-promo-icon ${feature.tone}`}>
+                      <i className={feature.icon} aria-hidden="true" />
+                    </span>
+                    <span className="pricing-promo-itemlabel">{feature.label}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <div className="pricing-promo-sep" />
+
+          <div className="pricing-promo-footer">
+            <button type="button" className="pricing-promo-btn" onClick={handleOpeningOffer}>
+              Claim Opening Offer →
+            </button>
+            <p className="pricing-promo-foot">
+              <span>Priority setup.</span> Faster onboarding. <span>One powerful bundle.</span>
+            </p>
+          </div>
+          </div>
+        )}
 
         <div className="pricing-grid">
           {displayPlans.map((plan) => (
